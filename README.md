@@ -27,8 +27,9 @@ _Опишите в этом разделе задание и ваше решен
 _Опишите в этом разделе, как запустить ваше решение, где должен запуститься сервис, как им пользоваться. Если вы хотите сообщить пользователям и проверяющим дополнительную информацию, сделайте это здесь._
 
 ```bash
-git clone <link/to/your/repo>
-cd <your_repo_name>
-docker built <parameters>
-docker run <parameters>
+git clone <https://github.com/Arsenalko/emnist-cnn-classifier/tree/master>
+cd <emnist-cnn-classifier>
+docker built <-t "emnist_cnn_classifier" .>
+docker run <-d --name "emnist_classifier" -p 8000:8000 "emnist_classifier">
 ```
+_После запуска контейнера на локальном хосте и перехода по ссылке в браузере откроется интерфес приложения, представленный окном для рисования символов и двумя кнопками: predict и clear. После того, как символ будет нарисован пользователем в окне, активировав кнопку predict будет выведен предсказанный класс символа. Кнопка clear очистит окно для следующего использования.
